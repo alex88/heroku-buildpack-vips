@@ -3,7 +3,7 @@ heroku-buildpack-vips
 
 Heroku buildpack with [libvips](https://github.com/jcupitt/libvips) installed.
 
-Current vips version is 7.40.11 with webp 0.4.0, libtiff 4.0.3, orc 0.4.18, fftw 3.3.4, libgsf 1.14.30, imagemagick 6.9.0 and lcms 2.6
+Current vips version is 7.42.3 with webp 0.4.0, libtiff 4.0.3, orc 0.4.18, fftw 3.3.4, libgsf 1.14.30, imagemagick 6.9.1 and lcms 2.6
 
 ## Usage
 
@@ -37,7 +37,7 @@ This is the script used to build vips on `heroku run bash`
 #!/bin/bash
 
 # Set vips version
-export VIPS_VERSION=7.40.11
+export VIPS_VERSION=7.42.3
 export WEBP_VERSION=0.4.0
 export ORC_VERSION=0.4.18
 export FFTW_VERSION=3.3.4
@@ -216,7 +216,7 @@ cd $BUILD_PATH
 ###############
 
 # Download glib dependency
-curl http://ftp.gnome.org/pub/gnome/sources/glib/2.41/glib-2.41.1.tar.xz -o glib.tar.xz
+curl -L http://ftp.gnome.org/pub/gnome/sources/glib/2.41/glib-2.41.1.tar.xz -o glib.tar.xz
 # Unzip
 tar -xvf glib.tar.xz
 # Get into glib folder
@@ -277,13 +277,13 @@ cd $BUILD_PATH
 ###############
 
 # Download Imagemagick dependency
-curl -L http://www.imagemagick.org/download/releases/ImageMagick-6.9.0-0.tar.xz -o ImageMagick.tar.xz
+curl -L http://www.imagemagick.org/download/releases/ImageMagick-6.9.1-0.tar.xz -o ImageMagick.tar.xz
 # Unzip
 tar -xvf ImageMagick.tar.xz
 # Get into Imagemagick folder
-cd ImageMagick-6.9.0-0
+cd ImageMagick-6.9.1-0
 # Configure build
-./configure --prefix $OUT_PATH
+./configure --prefix $OUT_PATH --with-gcc-arch
 # Make Imagemagick
 make
 # Install Imagemagick
