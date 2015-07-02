@@ -7,7 +7,7 @@ Current vips version is 7.42.3 with webp 0.4.0, libtiff 4.0.3, orc 0.4.18, fftw 
 
 ## Usage
 
-Point the BUILDPACK_URL config or add to your .buildpacks this:
+Use https://github.com/ddollar/heroku-buildpack-multi as buildpack and add to your .buildpacks this:
 
 ```
 https://github.com/alex88/heroku-buildpack-vips.git
