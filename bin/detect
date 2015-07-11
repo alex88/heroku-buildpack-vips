@@ -1,4 +1,5 @@
 #! /bin/bash
 
 # Always use when requested
+echo "Vips Library"
 exit 0
