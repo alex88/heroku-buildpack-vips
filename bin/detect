@@ -1,4 +1,5 @@
 #! /bin/bash
 
 # Always use when requested
+echo VIPS
 exit 0
